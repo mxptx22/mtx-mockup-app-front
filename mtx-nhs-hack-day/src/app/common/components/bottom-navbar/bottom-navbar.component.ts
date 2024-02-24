@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Page } from 'src/app/patient-module/types/pages';
 
 @Component({
@@ -14,7 +14,11 @@ export class BottomNavbarComponent implements OnInit {
   currentPage?: string;
   pagesArr: Page[] = [];
 
-  constructor(private location: Location, private router: Router) {}
+  constructor(
+    private location: Location,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     if (!this.pages) throw new Error('Missing Pages');
@@ -23,7 +27,9 @@ export class BottomNavbarComponent implements OnInit {
   }
 
   navigateToSection(pagePath: string): void {
-    this.router.navigate([`/${this.section}/${pagePath}`]);
+    this.router.navigate([`${pagePath}`], {
+      relativeTo: this.route,
+    });
   }
 
   private convertMapToPagesArr(pagesMap: Map<string, Page>): Page[] {

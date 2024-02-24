@@ -1,4 +1,23 @@
 <div class="flex flex-col gap-4">
   <h1 class="text-3xl">My Health</h1>
-  <div class=""></div>
+  <div class="flex flex-col gap-2">
+    <div
+      class="rounded-lg border-2 border-gray-300 px-6 text-left"
+      (click)="navigateToSection(myHealthPages.personalRecord.path)"
+    >
+      <h1 class="text-2xl">My Personal Record</h1>
+    </div>
+    <div
+      class="rounded-lg border-2 border-gray-300 px-6 text-left"
+      (click)="navigateToSection(myHealthPages.prescriptions.path)"
+    >
+      <h1 class="text-2xl">My Prescriptions</h1>
+    </div>
+    <div
+      class="rounded-lg border-2 border-gray-300 px-6 text-left"
+      (click)="navigateToSection(myHealthPages.testResults.path)"
+    >
+      <h1 class="text-2xl">My Test Results</h1>
+    </div>
+  </div>
 </div>
