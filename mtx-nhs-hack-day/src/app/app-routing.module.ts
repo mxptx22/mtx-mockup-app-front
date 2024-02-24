@@ -6,6 +6,7 @@ import { HCPModuleComponent } from './hcp-module/hcp-module.component';
 const routes: Routes = [
   { component: PatientModuleComponent, path: 'patient' },
   { component: HCPModuleComponent, path: 'hcp' },
+  { path: '**', component: PatientModuleComponent },
 ];
 
 @NgModule({
