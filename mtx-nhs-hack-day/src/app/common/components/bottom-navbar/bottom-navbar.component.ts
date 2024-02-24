@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Subject, filter, takeUntil } from 'rxjs';
 import { Page } from 'src/app/patient-module/types/pages';
 
 @Component({
@@ -8,22 +9,19 @@ import { Page } from 'src/app/patient-module/types/pages';
   templateUrl: './bottom-navbar.component.html',
   styleUrls: ['./bottom-navbar.component.scss'],
 })
-export class BottomNavbarComponent implements OnInit {
+export class BottomNavbarComponent implements OnInit, OnDestroy {
   @Input() section?: 'hcp' | 'patient' = 'patient';
   @Input() pages?: Map<string, Page>;
   currentPage?: string;
   pagesArr: Page[] = [];
 
-  constructor(
-    private location: Location,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.subsToCurrentSegment();
+  }
 
   ngOnInit(): void {
     if (!this.pages) throw new Error('Missing Pages');
     this.pagesArr = this.convertMapToPagesArr(this.pages);
-    this.currentPage = this.getCurrentSegment(this.location);
   }
 
   navigateToSection(pagePath: string): void {
@@ -36,9 +34,20 @@ export class BottomNavbarComponent implements OnInit {
     return [...pagesMap.values()];
   }
 
-  private getCurrentSegment(location: Location): string {
-    const path = this.location.path();
-    const segments = path.split('/');
-    return segments[segments.length - 1];
+  private subsToCurrentSegment() {
+    this.router.events
+      .pipe(
+        takeUntil(this.$ngDestroy),
+        filter((e) => e instanceof NavigationEnd)
+      )
+      .subscribe((_) => {
+        this.currentPage = this.route.snapshot.firstChild?.routeConfig?.path;
+      });
+  }
+
+  $ngDestroy = new Subject();
+  ngOnDestroy(): void {
+    this.$ngDestroy.next(true);
+    this.$ngDestroy.complete();
   }
 }
