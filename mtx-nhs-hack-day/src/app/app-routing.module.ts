@@ -4,9 +4,17 @@ import { PatientModuleComponent } from './patient-module/patient-module.componen
 import { HCPModuleComponent } from './hcp-module/hcp-module.component';
 
 const routes: Routes = [
-  { component: PatientModuleComponent, path: 'patient' },
-  { component: HCPModuleComponent, path: 'hcp' },
-  { path: '**', component: PatientModuleComponent },
+  {
+    path: 'patient',
+    loadChildren: () =>
+      import('./patient-module/patient.module').then((m) => m.PatientModule),
+  },
+  {
+    path: 'hcp',
+    loadChildren: () =>
+      import('./hcp-module/hcp.module').then((m) => m.HCPModule),
+  },
+  // { path: '**', component: PatientModuleComponent },
 ];
 
 @NgModule({
