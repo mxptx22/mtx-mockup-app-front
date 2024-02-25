@@ -1,23 +1,39 @@
 <div class="btm-nav">
-  <button
-    *ngFor="let page of pagesArr"
-    (click)="navigateToSection(page.path)"
-    [ngClass]="page.path === currentPage ? 'active' : null"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-5 w-5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-      />
+  <button *ngFor="let page of pagesArr" (click)="navigateToSection(page.path)"
+    [ngClass]="page.path === currentPage ? 'active' : null" class="bg-[#F2F2F2]">
+
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" *ngIf="page.path == 'home'">
+      <rect width="40" height="40" fill="url(#pattern0)"/>
+      <defs>
+      <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+      <use xlink:href="#image0_87_262" transform="scale(0.0111111)"/>
+      </pattern>
+      <image id="image0_87_262" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAADJ0lEQVR4nO2cPW/TUBSGr1TExwCCFRATDLDBUv4BLLB5QAJFJD6PW4mAMjGWrQV+ARMDiB0m+AN8LJSJASYQtCOilQAJRJBRIkWhHym2c4+Pzyu9S5vY7/vk9qZHthyCy+VyuVwul2tErVZrL3AbWBGRVRFZyn82+hpXQbXb7cPAS6A/ahF5DRwrenxXCGFubu408GEc8og/A7MOq4BE5ArwfQvIQ+evuTzJMZMk2T3cgsY/sHw7yn/fmA8tSZIZ4O4EgMe3kjv5e7c6dg5zm2MshSao3W7vBx7vFPKIn7ZarYObHX+DlTwOejVYV6fTOQ68LQB5COtdp9M5udE5Jnl/sKw0Tc8BX4pCHvEacGH8PI0GDSAiP0uEPPQv4GZoOuhut7sHuF8B4PGt5FGv19vXSNDtTYaQCmH/HW4aBRqYHQwa/Sl7onMGC8qy7JKIfIsAeWKHOitJkpnthgUtDnUeQkTkSWyApkFnWXaijCHEQU93COn7ih6TiNwYDAz9ujnUQflVDxF5EBsWBaz+ys20hxAqsuorN8AZEfkYGxLleSVN07NBk+owhPB/K/sHcDU231oNIRQDfm9hYWFXFMjdbvdAnYYQivvZ/Pz8oalCruMQQjl+n2XZqalABs7XcQihPK+JyMVKIdd5CKFc/xaRW6UDHtwL8VBBwb4m54NZqfeBAIuxS6HXi2WCjnE1pF8TrzhoqgctIp9KA92EoQQNW0e+4Q9g+xZChJsiFaym/jRdOVAHjYPGV3T8P3V86yA6NN+jiQ/Uvwxx0NFXG76i4wPyrYN/IWj+H7/8ScRAGRRnM1UGxdlMlUFxNlNlUJzNVBkUZzNVBsXZTJVBcTZTZVCczVQZFGczVQbF2UyVQXE2U2VQnM1UGRRnM1UGxdlMlUFxNlNlUJzNVBkUZzNVBsXZTJVBcTZTZVCczVQZFGczVQbF2UyVQXG2HUtE1qsohEKLyNeYoF/FBsD0/CIaaOB6g1b0tajPFhWRN7EhUL2Xoz8pPU3To8ZhL2dZdiQoempuN9/HLHxBisi6iDzPt4voK9nlcrlcLpfL5XK5XC6XK+jTH9agJ5eEIlD4AAAAAElFTkSuQmCC"/>
+      </defs>
+      </svg>
+
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" *ngIf="page.path == 'my-health'">
+      <rect width="40" height="40" fill="url(#pattern1)" />
+      <defs>
+        <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0_87_263" transform="scale(0.0111111)" />
+        </pattern>
+        <image id="image0_87_263" width="90" height="90"
+          xlink:href="data:image/png;base64,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" />
+      </defs>
     </svg>
+
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" *ngIf="page.path == 'messages'">
+      <rect width="40" height="40" fill="url(#pattern2)"/>
+      <defs>
+      <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+      <use xlink:href="#image0_87_265" transform="scale(0.0111111)"/>
+      </pattern>
+      <image id="image0_87_265" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAADfElEQVR4nO2dPWgUURSFB63EKBZa+IuFtQYEja2VgorNgkUkZvedM+zoRgJiJ4uFlU3Uxj8sLO0Eo9YWgoW1imUEiY0/CSQh0ZGnU2ixm5nZTe67O/fA7cKd+76cufte2HcTRSaTyWQymUwmk8lkMplMFRfJfSRbJF8CeE9ynmQ6oDGfrdGv9VKz2dy75oDjON4N4B7JlQAApBIB4CfJJ3Ec718TyCTPApiTXijDiR8AzvQVMoDL2W9SenFpSJExmeinkw0yO8Pu2dnOuT3WLpirjdTr9V2lQQN4JP16Uk886GULV9ndBYvHiu8AZUBPBFB8qiwuFgYN4EUAhaeaAsB0GUd/lC6cysKfIMs42g4nLAx6royjxR1ChWGgaaBTaReaoykPzloH5aFaj6aBTqUdZ46mPCRrHZQHaD2aYYUdWGigU2kXDoKjF0hOxXF8ZHR0dLMPkkdJ3gKwqDhPUKBnGo3GwU754zg+5H9GYZ6gQC90W9S/i1vFSaHlCQ70VN7nALitKE9YoH0PzPsc59yIljzBgU6SZCjvc5IkGdKSRzXoVqu1VUue4ECH9srHg9o6/L60wHPuKMoTFmi/RfJbpdWe4ZwbJrmkJU9woLOY6bY459wwgE8K8wQH+o+T/L7UOTfiP5CyT/Rj2eu5pDVPcKCrGJGBpoFmAE40R1MenrUOyoO1Hk0DnUq7zhxNeVDWOigP0Xo0wwk7sNBAp5V2tF0WYmHIAL6XaR0fpN1BffGujKPtQifX4UKnH2sTgENSZdEsDNrPDrJL9yzi5uVSl+4zVz8MwCWpkrgb9TKsyg/9CGARaei7DZI7S4POXH3SWgi7QfZjkE5H/ZCf3WFzldgJcivqp/yAJmsj/K9dOOdORWuh8fHxHdm345cr7uLHPffkPPLbGD/WhuRzfxoa5OM6/q7Nr3EaQFJ6C7ceInmz5CKvSteuSiTfloD8ularbZSuXY1Ibi+xPfzWaDQOSNeuSgCuFHTyonPuuHTdqlSv17cA+FwA9C8A56XrVieS9wtetqxJ16xO2cT0vJC/+K/PStesSu12ewPJtm8DOSE/62lSbRXlnDtM8lXOD71Z59wF6ZrVieS1PH94AjDrdyL+wrt0zSpF8msXuMu+RQA4Nzk5uUm6VtUCcCP7NyEzAN6QfEryOskTY2Nj26TrM5lMJpPJZIoqod/BS93kv8TlUAAAAABJRU5ErkJggg=="/>
+      </defs>
+      </svg>      
+
     <span class="btm-nav-label">{{ page.name }}</span>
   </button>
   <!-- <button class="active">
