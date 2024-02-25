@@ -1,0 +1,98 @@
+<div class="flex flex-col h-full">
+    <div class="flex flex-col gap-2 px-8 h-full items-center bg-[#FDB2B2]" *ngIf="notification == 'alert'">
+        <div class="p-5 100px flex rounded-full bg-[#F40808]
+        items-center justify-center mt-20 mb-6">
+            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="90" height="90" fill="url(#pattern0)" />
+                <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_20_1492" transform="scale(0.0111111)" />
+                    </pattern>
+                    <image id="image0_20_1492" width="90" height="90"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeUlEQVR4nO3cMUhVcRzF8V8t1lC05FRTTTXZlJNSg0s11VRDJA415XMQl3AIGoKGwEFoCBqKoCKIKKKSiCJCiSBqiNSeOigNQUWRlNy4b7/3d+gdju984I2Pe/gi+N71/o0wMzMzMzOzWlYi4m/ytVzvUp1tEQjdZI9X8gkI/ZE9Xsl7IPQ79nglb4DQM+zxSl4BoV+yxyt5BoSeYo9X8ggI/ZA9Xsk9IPRd9nglt4HQN9njlVwHQl9jj1dyFQh9hT1eySQQeoI9XsllIPQl9nglF4HQF9jjlZwHQo+zxys5B4QeY49XMgqEHmaPV3IWCH2GPV7JaSD0IHu8klNA6BPs8UqOA6GPsccrOQqEPsIer+QwEHqAPV7JABC6nz1eST8Qej97vJJeIHQPe7ySfUDoPezxSvYCoXexxyvZDYTewR6vZCcQejt7vJJuIPRW9ngl24DQXezxSjYnI/+JiA3s8Uo2JkP/ZA9X9DsR+it7tKJvidA+v5LwJRHa51cSlhKhfX4lYTYR2udXEj4kQk9nLtTp3iZCv2CPVvQ6Efope7Si54nQD9ijFT1OhPb5lYT7idA+v5JwJxHa51cSbiRC+/yKmZmZmZnZetRVnrQqvpLPR8T3iPgREZ/Lm0hD5XMgBj6Q3qzw1bv4h4QHkQt1euRfNe5zrEbEIfZoNVvKZzTq3lRaKd9rFQ0nIrdejaoXsUj9daX1Kt5r//HhmdZroepFLP59hMuGLj76WRv+f7R/omt4AoQu3msVNYDQI1UvYgF9jvZhoZr8zbCN+sqbR1V+AR5o57D1evfuZETcKp+Zbt29myvv6BV39jaxR5qZmZmZmYWqNUt0eOl8dx8VAAAAAElFTkSuQmCC" />
+                </defs>
+            </svg>
+        </div>
+
+        <h1 class="text-3xl notification-font text-center bold">ALERT</h1>
+        <h3 class="text-xl notification-font text-center mb-4">Your recent blood test results have come back <span
+                class="bold">abnormal</span>.</h3>
+        <h3 class="text-xl notification-font text-center mb-8">
+            <span class="bold">DO <span class="text-red">NOT</span></span> take the next dose of Methotrexate.<br>
+            Contact your doctor or pharmacy immediately for further information.
+        </h3>
+
+        <div class="w-44 h-16 flex items-center justify-center rounded-3xl bg-[#F2F2F2] px-2">
+            <svg class="mr-3" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="40" height="40" fill="url(#pattern1)" />
+                <defs>
+                    <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_20_1544" transform="scale(0.0111111)" />
+                    </pattern>
+                    <image id="image0_20_1544" width="90" height="90"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAADnklEQVR4nO2cW4hNURiAPwy55hYZ8eCalIyXSW6l5BJJKTE1pEhuefDkRZQXyYQ8SblGLnkgohRFhgfk8qBchyZymeQ+LrO0ml+DmWPW2Wtve591/q/+x7PPWt/ZZ629//WvBYqiKIqiKIqiKEVEe6ASOAu8At4AB4EBaTcsJKYCDwHTQjwB+qbdwEKnLVAFNOSQbCQOp93QQqYDcLwVwUbC/hAT025wIdIOOOIo2UjcAUrSbnihsTlPyUZiedoNLyRmOozJueI10CvtDhQCnYFHESUbiZ1pd6IQWOcp2QDfgVFpdyTrTxm1MYg2wIW0O5NlpsUk2UjMS7tDWWVbzKJrZMxX/uJSzKINsFEtN+d5AqI/A4NU9p98SUC0kdd45Tc+JSTayESrCK8TFH1X8yBNXEtQtAGW6C3dyIGERZ9X0Y2sTFj0DRXdyPCERe9S0U34Zu5MjvgGjFTRTWxISHSVSv6TgZLmjFPyC6C7im7O6ZhFV6rklhkXo+TLQBsVnZtzMUj+DpSp5H8zNgbRu1WyG4c8RY9X0W6UAm89RA9S0e6s9hA9W0XnVxoWNat3RT6vODIEeBdR9ma1nB9LPYaQxSo7P456LNCWq2x3egOPI8p+Jk8xiiOjgY8RZd8Geqppdyo8xutqoIvKdmerh+xTuiLuTolsgzMRY59m9dzpJguuUWXvUNnulHo8iRgpcbAbRRUHhgIvPcdsLe91ZIJn7Z4tGe6ht7UbM4B6D9m3gP4RZds9M3ukxu+CpAyC3vM4B/jqIbs2z9d1+y/YLnUjf1/rnvz4wTI3R8ddw9ZpL2rlO+yC70IpZXCZAwYTKIuAHx6yjdypLeWzx8jqej7XqpfrdSVAlsUgu1qGo2HAZGCvZ4FPTai7xSo8h5Gk4qIkyIJinucEmVTYf9t+oA8BMUsWAEwGow5YE9L65vSENyT5xk1gEgG9Qb7JgNRc0SDHFgVxRtQIz0TU/4iaUE4/KwWuZ0Boa5nFYPLZZzMgNFfYs/2CocRzWSzJsBtcg2M+8CEDcn8Pu/MhSMoyNkkuIPAinRMZkHw/9Hz2L2wK9H2Kz9L2LNaiYRhwNQXRWyhC2gGrPHce5BPH5ODboqWfZNqinjDpEnZu6Jh2R7NCOXAmgTF5U7Hfyf/anncyhu3U9vBxPYbIAZv4WQ88yFPwU2At0MnlS5TmFVMrZCyvlhXyOomnUu9hX/enaBmaoiiKoiiKoiiKoigKLfITfKfz4+dwKvgAAAAASUVORK5CYII=" />
+                </defs>
+            </svg>
+            <h2 class="text-2xl call-font bold">Call GP</h2>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-2 px-8 h-full items-center" *ngIf="notification == 'drug-reminder'">
+        <div class="p-5 100px flex rounded-full bg-[#B3E5AF]
+        items-center justify-center mt-32 mb-6">
+            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="90" height="90" fill="url(#pattern2)" />
+                <defs>
+                    <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_20_1351" transform="scale(0.0111111)" />
+                    </pattern>
+                    <image id="image0_20_1351" width="90" height="90"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEWElEQVR4nO2cTahWRRiAH++1e24qpAS5uQqGq1wY+LeoRNyIEJoFLhRqYYiJQhToRuVuCt0ErQRTMyJIRTAvXG4Lf8HKigqJQlCUFqKphNb1B9SJgffAx+U73znn+5nzzpx5YHYf53vn4T0z58y8cyASiUQikUgkEolEIs54Dngd2A2cAP4AbgHjwD3gBvAbcBTYBSwDBt2F5zf9wJvAN8AjwJRsd4FDwNKqO6KVPmADcLkNuVntB2BF1R3TxALg5y4Kntjs3TGLGjMJ+KDNIaJsuwOspqZj8X4HghvbU2CYGpEAIwXl/A3sA9YDS4AhYAB4FngReAXYCHwN/FfwmnuoieTRAjJ+At4CJpe49lTgPeBqgetvo+aS7wDvyPjdLvZZemfO2G+HkVXUVPIFYHYX/3MR8FeL/7stQ1GtJI/Jrd9thuSNMut/j1MjyaPyu14xlJPZ3r/UDMgaRV4mu1ifWNhizP4Rj0kUZPJEdrWI5TU8JFEoGblzrmXE8zmekSiVnLI5I6Z/KowpOMnIk03WG6QXS6uJB5JTjmTEtwPlDCh6uijCpowYD6OYxKNMTlmcEecvKCXxULLl+YxYr6OQAc+Gi4lr4c3itRu+qkg8zeTG/cmnTWK2u+tqSDyXnJYxNIvbli+oIAlAsuXljNh/RwGhSLa8rXXJNCTJloMZffiICvH56aIZz8jOiqp16dAy2bI2ox8PgGlUQIiS+4BfM/pyrIqAQpRsebdFf97AU8nzZMv/C+AzWcixr75VMUfWnJv155Jku1eSB6XU60lGSa2tGHXNtJwiSvu455XkqcCZnGsYx/VvNt5vW8TyfYfFOqWYXKAWrluSjUPZecnzEJiPIybJONqp5NMlJLuQXeQO3YpDPuzwZWQKcLINyWmz51OqeMn60uWQsSCnELBXmWx6mNlFMnmkZJVqR/TlzMTnHEk2XZSt8vl/Q05AL+UMF6e7KLkbslVK7s85/TSeI/lUDyR3IlulZKSSPq/DsyuQbNqQrVYychwsr7PHZfZOmeFIsikhW7Xk6SWOm9kC7o+BT2Qr3jhuw75KRs5tGI/abl83I/YokGdKtr2yc22ZC5zVnMkpRc/3aWuPgZsFfqdCsuVPBdJMj5oaycj3LkyAbazqMXki9xVIMSFncsq4AjEm5ExOKTKh+NLGtEq2XFQgyIQuGalfqFqSCV1y3qFGH9qoxomvGcsVyDIhZ3LKoNRXVC3NhJrJjRxSIM6EmsmNLFUgz4ScyY18p0CiCTWTG1mhQKQJOZPLbmnFTO4Cs+SrXFWLNaFmciOrMw43Rsk9YLsCyWMhTHxFGJbtoiokj4Q6XLR6vr7hWPIBlwWH2ibI8w4EPwS2UHP65bvO93ok+bzLSnsfeAH4tMTngk1Os4fa17ksAPcNW0b2vry2Pykp91/gK2Cl6yNmvjMTWCOlWkflVJOtFbki22RnZIKz32d+Vc5eRyKRSCQSiUQikUgEB/wP8Ckg7dUSCsQAAAAASUVORK5CYII=" />
+                </defs>
+            </svg>
+        </div>
+
+        <h3 class="text-2xl notification-font text-center mb-16">
+            Your blood test result on
+            <span class="bold">{{date}}</span>
+            is satisfactory.<br><br>
+            Please take Methotrexate as instructed by your doctor.
+        </h3>
+
+        <svg width="80" height="75" viewBox="0 0 80 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="37.5" rx="30" ry="28.125" stroke="#33363F" stroke-width="2" />
+            <path d="M26.6667 37.5L36.6667 46.875L53.3333 28.125" stroke="#33363F" stroke-width="2" />
+        </svg>
+    </div>
+
+    <div class="flex flex-col gap-2 px-8 h-full items-center" *ngIf="notification == 'blood-test-reminder'">
+        <div class="p-5 100px flex rounded-full bg-[#EC7B14]
+        items-center justify-center mt-32 mb-6">
+            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="90" height="90" fill="url(#pattern3)" />
+                <defs>
+                    <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_20_1353" transform="scale(0.0111111)" />
+                    </pattern>
+                    <image id="image0_20_1353" width="90" height="90"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC+ElEQVR4nO2dP2sUQRiHfxHZUbhe0quVjRZi4RcIaS30O9jYaeU2MYeNAas0+gliQDDaBUIsrQVFsDEp0iXKnQhZWZiDsOzc/pl33rud+T0wcBy37N7D7DvzvrM3BxBCCCGEEF2uAtgG8BvACYCXAIzyNSTBNoCi0vYoW5YVAGc1oik7AKcO0ZQtzKs5oilbEGNjMmUryf5G2eHJGyTP2icAVxSuJ2nJRaqyMwBjAMe2jXskGl0lJzlAjj0F9JWcnOxjj1vbV3JSYeTIo7dJiU6iZ296CpCUvYWIMQKJhpTsM1s3SVZ0ISz7u+P9CYBLSFhyISg7n3PeN4gQ01GyhOy8cv4tGy4mVvIIkWF6SvaRfVHyRVZijcum5eAnOUC6JEeL6SBQajaSnOQMwPuOGVqfY5Im8xBG2S2REEXZDUgKomxFMZStKISyFUUkL9sIzH0fATiw7WHDs3ZfPc81SDKBnlyXOpdLXS6etEjXo5pnm8A1ZVd297iF6Gh6tlEq3FdlXwbwpaXowq7kDBajvDqyA2AdwAMAhx2OK+za5CDJAsXkUO0XIu3JHxQXVat3UN21vUCCkm8AmAaSPCuxbtpwcWRfl3dgUpJnrAnLjmJmIS15xlNK7j7wfeyRGFwTEB1NQmIEevJ1x/urDBeys4upjclVnjEmy0/hpjYmr9pWvv6b+sAnEZPzANO3qGIyJSswhGRk8DAZUaB8VHWXyUh4NpiMhOcegHMmI+HZZzISnjtMRnRwJRX7CyzaG0SIa93t5pxjckruzs8aaf8oWR5XBne35rM5e3J/XLHyB4Bb9jMjAK8p2Y82S/QTSvYnxMyhSKnU2RZKVoI9WQmGCyUYk5XgwKcEZxcKmMCi92ItEGlu41A0tHeU3O5xgr7t3P64J8rtcpZF8mcA9xf9BWMLF1NbYi1/C/gcwO1Ff7llgXsrK9FU5uQMQYByYPpDyTqiXTVl9mRh3lKyDiMre2I31Cv/4SH5rC0kUW6kRwghhBBCCMFS8h/2T1jG6gUX6wAAAABJRU5ErkJggg==" />
+                </defs>
+            </svg>
+
+        </div>
+
+        <h3 class="text-2xl notification-font text-center mb-16">
+            Your next  appointment for the blood test is <span class="bold">due soon</span>.<br><br>
+             Please contact your doctor to schedule an appointment. 
+        </h3>
+
+        <svg width="80" height="75" viewBox="0 0 80 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="37.5" rx="30" ry="28.125" stroke="#33363F" stroke-width="2" />
+            <path d="M26.6667 37.5L36.6667 46.875L53.3333 28.125" stroke="#33363F" stroke-width="2" />
+        </svg>
+    </div>
+</div>

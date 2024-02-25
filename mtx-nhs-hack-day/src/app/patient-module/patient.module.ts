@@ -9,6 +9,7 @@ import { CommonComponentsModule } from '../common/common-components.module';
 import { MyPersonalRecordComponent } from './pages/my-health/my-personal-record/my-personal-record.component';
 import { MyPrescriptionsComponent } from './pages/my-health/my-prescriptions/my-prescriptions.component';
 import { MyTestResultsComponent } from './pages/my-health/my-test-results/my-test-results.component';
+import { NotificationComponent } from './pages/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MyTestResultsComponent } from './pages/my-health/my-test-results/my-tes
     MyPersonalRecordComponent,
     MyPrescriptionsComponent,
     MyTestResultsComponent,
+    NotificationComponent,
   ],
   imports: [CommonModule, PatientRoutingModule, CommonComponentsModule],
 })
